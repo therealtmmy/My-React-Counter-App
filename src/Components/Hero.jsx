@@ -2,13 +2,22 @@ import React from 'react'
 import {Container, HeroButton, HeroText } from "./Hero.styled"
 
 const Hero = () => {
+    const [count, setCount] = React.useState(0)
+    const addButton = () => {
+        setCount(count + 1) 
+    }
+
+    const subButton = () => {
+        setCount(count - 1) 
+    }
+
   return (
     <Container>
-        <HeroButton>-</HeroButton>
+        <HeroButton onClick={subButton}>-</HeroButton>
         <HeroText>
-            <h1>0</h1>
+            <h1>{count}</h1>
         </HeroText>
-        <HeroButton>+</HeroButton>
+        <HeroButton onClick={addButton}>+</HeroButton>
     </Container>
   )
 }
